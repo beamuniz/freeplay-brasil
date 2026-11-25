@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Encontre jogos gratuitos para jogar no PC e navegador." />
+    <title>PlayLivre — Jogos gratuitos</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalogo">Pular para o catálogo</a>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="PlayLivre, início">
+        <span class="brand-mark" aria-hidden="true">▶</span><span>Play<span class="brand-highlight">Livre</span></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#dados">Dados</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">informação aberta para quem joga</p>
+          <h1 id="hero-title">Seu próximo jogo <span>não precisa custar nada.</span></h1>
+          <p class="hero-text">Explore jogos gratuitos para PC e navegador. Transformamos um catálogo de API em escolhas simples para jogar hoje.</p>
+          <a class="button button-primary" href="#catalogo">Explorar jogos <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="featured-placeholder" aria-live="polite" aria-label="Jogo escolhido para hoje">
+          <p class="eyebrow">dica do dia</p>
+          <div id="featured-game" class="featured-loading">Escolhendo uma aventura para você…</div>
+          <button class="text-button" id="random-button" type="button">Sortear outro <span aria-hidden="true">↻</span></button>
+        </aside>
+      </section>
+
+      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">catálogo aberto</p>
+            <h2 id="catalog-title">Encontre algo para jogar</h2>
+          </div>
+          <p id="results-summary" class="results-summary" aria-live="polite">Carregando catálogo…</p>
+        </div>
+        <div class="filters" aria-label="Filtros do catálogo">
+          <label class="search-field" for="search-input"><span class="sr-only">Buscar por título</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Buscar um jogo" autocomplete="off" /></label>
+          <label for="platform-filter"><span class="sr-only">Plataforma</span><select id="platform-filter"><option value="all">Todas as plataformas</option><option value="PC (Windows)">PC</option><option value="Web Browser">Navegador</option></select></label>
+          <label for="genre-filter"><span class="sr-only">Gênero</span><select id="genre-filter"><option value="all">Todos os gêneros</option></select></label>
+        </div>
+        <div id="status-message" class="status-message" role="status">Buscando jogos gratuitos…</div>
+        <div id="games-grid" class="games-grid" aria-live="polite"></div>
+        <button class="button button-outline" id="load-more" type="button" hidden>Ver mais jogos</button>
+      </section>
+
+      <section class="data-section" id="dados" aria-labelledby="data-title">
+        <div class="data-copy">
+          <p class="eyebrow">o catálogo em números</p>
+          <h2 id="data-title">Diversidade para todos os estilos</h2>
+          <p>Os dados são atualizados diretamente da FreeToGame API. O gráfico mostra os gêneros mais presentes no catálogo carregado.</p>
+        </div>
+        <div class="chart-card"><canvas id="genre-chart" aria-label="Gráfico de gêneros mais presentes no catálogo" role="img"></canvas></div>
+      </section>
+
+      <section class="about-section" id="sobre" aria-labelledby="about-title">
+        <p class="eyebrow">por que existe?</p>
+        <h2 id="about-title">Dados de jogos também podem ser simples.</h2>
+        <p>A PlayLivre aproxima pessoas de um catálogo público de jogos gratuitos. Em vez de exigir conhecimento técnico para consultar uma API, organiza informações de plataforma, gênero e acesso em uma experiência direta, pesquisável e acessível.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">▶</span><span>Play<span class="brand-highlight">Livre</span></span></a><p>Jogos gratuitos, informação acessível.</p></div>
+      <div class="credits"><strong>Créditos e licenças</strong><p>Dados, capas e links: <a href="https://www.freetogame.com/api-doc" target="_blank" rel="noreferrer">FreeToGame API</a> (consulte os termos do provedor). Gráficos: <a href="https://www.chartjs.org/" target="_blank" rel="noreferrer">Chart.js</a>, licença MIT. Fonte: <a href="https://fonts.google.com/specimen/DM+Sans" target="_blank" rel="noreferrer">DM Sans</a>, licença SIL OFL 1.1. Ícones: caracteres Unicode, sem mídia externa.</p></div>
+    </footer>
+    <dialog id="game-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" aria-label="Fechar detalhes">×</button><div id="dialog-content"></div></dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

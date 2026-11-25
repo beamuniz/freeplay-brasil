@@ -1,0 +1,20 @@
+# Dependências instaladas localmente
+node_modules/
+
+# Arquivos de build (o GitHub Actions gera esta pasta ao publicar)
+dist/
+
+# Arquivos de ambiente e configurações locais
+.env
+.env.*
+!.env.example
+
+# Logs e arquivos temporários
+*.log
+*.local
+
+# Configurações de editores e sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
